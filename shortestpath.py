@@ -1,3 +1,5 @@
+from collections import deque
+
 def bfs(n, m, edges, s):
 
     # Build graph
