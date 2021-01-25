@@ -1,0 +1,14 @@
+#! usr/bin/env python3
+
+def carParkingRoof(cars:list, k:int):
+    cars.sort()
+    n = len(cars)
+
+    res = float('inf')
+
+    for i in range(n-k+1):
+        print(i, i+k-1)
+        res = min(res, cars[i+k-1] - cars[i])
+    return res + 1
+
+print(carParkingRoof([2,10,8,17], 3))
