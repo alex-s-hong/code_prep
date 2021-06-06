@@ -21,22 +21,28 @@ def getUniqueUserIdSum2(s:list):
     return elem_sum
 
 def getUniqueUserIdSum(s):
-    level = 0
     res = 0
+    lever = 0
+    # lever can be 0 as min number is 1
 
-    for x in sorted(s):
-        if level < x:
-            level = x
+    for num in sorted(s):
+        if lever < num:
+            lever = num
         else:
-            # duplicant 
-            level +=1
-            res += level - x
-        res += x
+            # duplicate
+            lever +=1
+            res += lever - num
+        res += num
     
     return res
 
+
+
+
+
+
 if __name__ == '__main__':
     s = [3,2,1,2,1,7]
-    assert(getUniqueUserIdSum(s)==22)
+    assert getUniqueUserIdSum(s)==22
     s = [3,2,1,4,7]
     assert(getUniqueUserIdSum(s)== 17)
