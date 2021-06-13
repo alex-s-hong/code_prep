@@ -35,6 +35,7 @@ class Solution:
             stack.append(i)
 
         #2 arr[i] is a minimum of a window of length "right[i]- left[i] -1"
+        # winSize of i is selected from i-th position or previous max
         # ans[i] contains the maximum of minimum of elements in window size of i
         ans = [0 for _ in range(n+1)] # because 0 is not used
         for i in range(n):
