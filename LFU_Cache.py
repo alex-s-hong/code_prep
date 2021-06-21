@@ -47,7 +47,7 @@ class LRUCache:
         else:
             # capacity reached
             if len(self.keyToNode) == self.capacity:
-                key_, node_ = self.countToNode[self.minFreq].popitem(last=False)
+                key_, _ = self.countToNode[self.minFreq].popitem(last=False)
                 print("key {} is deleted".format(key_))
                 del self.keyToNode[key_]
             
