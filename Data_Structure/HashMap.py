@@ -69,5 +69,4 @@ if __name__ == "__main__":
     dic.add('John', 123000)
     dic.print()
     print('get', dic.get('Kim'))
-
-
+    

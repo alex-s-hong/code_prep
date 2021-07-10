@@ -32,3 +32,6 @@ if __name__ == '__main__':
 
     dictionary.add('Hi')
     dictionary.add('Hello')
+    print(dictionary.search('Hey'))
+    print(dictionary.search('Hel'))
+    print(dictionary.search('Hello'))
