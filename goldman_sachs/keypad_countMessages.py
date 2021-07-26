@@ -36,6 +36,6 @@ def countMessages(key:list, message:str):
 
     return res % (10**9+7)
 
-print(countMessages(['MGJ','YIZ','DKS','BHP','VENA','FLQ','URT','CWOX'], 'HHY'))
-print(countMessages(['ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ'], 'ME'))
-print(countMessages(["MGJ","YIZ","DKS","BHP","VENA","FLQ","URT","CWOX"], "HEY HEY HEY"))
+print(countMessages(['MGJ','YIZ','DKS','BHP','VENA','FLQ','URT','CWOX'], 'HHY')) # 8
+print(countMessages(['ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ'], 'ME')) # 2
+print(countMessages(["MGJ","YIZ","DKS","BHP","VENA","FLQ","URT","CWOX"], "HEY HEY HEY")) # 64
