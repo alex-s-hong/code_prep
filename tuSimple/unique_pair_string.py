@@ -22,6 +22,34 @@ def check_stirng(s:str):
             print(seen)
     return True
 
+"""
+dup:
+E:[0,4,9] -> 4,5,9
+A:[1,2] -> 1
+G:[6,10] -> 4
+
+if diff is same, False
+"""
+
+from collections import defaultdict
+
+def check_string2(s):
+    loc = defaultdict(list)
+    dup = []
+    for i, v in enumerate(s):
+
+        if v in loc:
+            dup.append(v)
+        loc[v].append(i)
+    
+    if not dup or len(dup) == 1: # len(loc) == len(s): #
+        return True
+    
+
+    
+
+
+
 #print(check_stirng('BEDF'))
 #print(check_stirng('GEEFF'))
 #print(check_stirng('GEFFE'))

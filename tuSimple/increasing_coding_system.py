@@ -1,7 +1,31 @@
 """
-26 to decmial
+a
+b
+...
+z
+ab
+...
+az
+bc
+bd
+...
+bz
+cd
+...
+abc
+abd
+...
 
 """
+def solver1(s:str):
+    n = len(s)
+
+    char = ''
+
+
+
+
+
 
 def solver(s:str):
     res = 0
@@ -13,3 +37,4 @@ def solver(s:str):
 
 solver('a')
 solver('ab')
+solver('dfp')
