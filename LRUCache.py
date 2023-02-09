@@ -7,6 +7,11 @@ class Node:
 
 
 class LRUCache:
+    """
+
+    mostRecent -> Node -> Node -> leastRecent
+               next
+    """
 
     def __init__(self, capacity: int):
         self.capacity = capacity
@@ -16,8 +21,8 @@ class LRUCache:
         self.leastRecent = Node(-1, -1)
         self.mostRecent = Node(-1, -1)
         
-        self.leastRecent.next = self.mostRecent
-        self.mostRecent.prev = self.leastRecent
+        self.mostRecent.next = self.leastRecent
+        self.leastRecent.prev = self.mostRecent
         
 
     def get(self, key: int) -> int:
@@ -51,20 +56,20 @@ class LRUCache:
         node_next.prev = node_prev
     
     def add(self, node):
-        prev_recent = self.mostRecent.prev
-        prev_recent.next = node
-        node.prev = prev_recent
-        node.next = self.mostRecent
-        self.mostRecent.prev = node
+        previous_most_recent = self.mostRecent.next
+        self.mostRecent.next = node
+        node.prev = self.mostRecent
+        node.next = previous_most_recent
+        previous_most_recent.prev = node
         
     def show(self):
         for k,v in self.cache.items():
             print("k: {}, v: {}".format(k,v.val))
         
-        mover = self.leastRecent
+        mover = self.mostRecent
         while True:
             mover = mover.next
-            if mover == self.mostRecent:
+            if mover == self.leastRecent:
                 print()
                 return
             print(mover.key, mover.val, end= "->")
